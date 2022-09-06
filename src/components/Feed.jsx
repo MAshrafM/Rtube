@@ -1,9 +1,18 @@
+// React
 import { useState, useEffect } from 'react';
 import { Box, Stack, Typography } from '@mui/material';
-import Sidebar from './Sidebar';
-
+// Components
+import {Sidebar, Videos} from './';
+// API
+import { fetchData } from '../utils/fetchData';
 
 const Feed = () => {
+  const [selectedCat, setSelectedCat] = useState('New');
+  const [videos, setVideos] = useState([]);
+  useEffect(() => {
+    fetchData(`search?part=snippet&q=${selectedCat}`)
+      .then((data) => setVideos(data.items))
+  }, [selectedCat]);
   return (
     <Stack 
       sx={{
@@ -20,7 +29,10 @@ const Feed = () => {
           px: {sx: 0, md: 2}
         }}
       >
-        <Sidebar />
+        <Sidebar 
+          selectedCat={selectedCat}
+          setSelectedCat={setSelectedCat}
+        />
         <Typography 
           className="copyright"
           variant="body2"
@@ -28,6 +40,22 @@ const Feed = () => {
         >
           Copyright 2022 MAshraf, JSM
         </Typography>
+      </Box>
+      <Box p={2} sx={{
+        overflowY: 'auto',
+        height:'90vh',
+        flex:'2'
+      }}>
+        <Typography 
+          variant='h4'
+          fontWeight="bold"
+          mb={2}
+          sx={{color: 'white'}}
+        >
+          {selectedCat} <span style={{color:'#F31502'}}>Videos</span>
+        </Typography>
+
+        <Videos videos={videos}/>
       </Box>
     </Stack>
   )
