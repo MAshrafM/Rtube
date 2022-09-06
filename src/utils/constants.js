@@ -12,6 +12,26 @@ import GraphicEqIcon from '@mui/icons-material/GraphicEq';
 import TheaterComedyIcon from '@mui/icons-material/TheaterComedy';
 import FitnessCenterIcon from '@mui/icons-material/FitnessCenter';
 import DeveloperModeIcon from '@mui/icons-material/DeveloperMode';
-// logo
 
+// logo
 export const logo = process.env.PUBLIC_URL+'/logo.svg';
+
+// sidebar categories
+export const categories = [
+    { name: 'New', icon: <HomeIcon />, },
+    { name: 'Coding', icon: <CodeIcon />, },
+    { name: 'ReactJS', icon: <CodeIcon />, },
+    { name: 'NextJS', icon: <CodeIcon />, },
+    { name: 'Music', icon: <MusicNoteIcon /> },
+    { name: 'Education', icon: <SchoolIcon />, },
+    { name: 'Podcast', icon: <GraphicEqIcon />, },
+    { name: 'Movie', icon: <OndemandVideoIcon />, },
+    { name: 'Gaming', icon: <SportsEsportsIcon />, },
+    { name: 'Live', icon: <LiveTvIcon />, },
+    { name: 'Sport', icon: <FitnessCenterIcon />, },
+    { name: 'Fashion', icon: <CheckroomIcon />, },
+    { name: 'Beauty', icon: <FaceRetouchingNaturalIcon />, },
+    { name: 'Comedy', icon: <TheaterComedyIcon />, },
+    { name: 'Gym', icon: <FitnessCenterIcon />, },
+    { name: 'Crypto', icon: <DeveloperModeIcon />, },
+  ];
