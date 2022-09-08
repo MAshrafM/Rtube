@@ -6,3 +6,12 @@ Learning Objectives:
 - Using Material UI (version 5)
 - Perfectly placed media queries for satisfactory responsiveness on all devices
 - And most importantly, fetching data from unlimited sources using RapidAPI.
+
+## Future
+- Add Comment Section
+- Add login section 
+- Add video upload
+- Add Loader
+
+## showcase
+![showcase](https://github.com/MAshrafM/Rtube/blob/main/showcase.gif)
